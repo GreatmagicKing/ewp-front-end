@@ -36,3 +36,7 @@
     transform: rotate(360deg);
   }
 }
+
+.body-background {
+  background : rgb(243, 247, 251)
+}

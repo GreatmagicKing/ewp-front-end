@@ -3,6 +3,11 @@ import 'antd/dist/antd.css'
 import { Col, Menu, Row } from 'antd';
 import { MailOutlined, AppstoreOutlined, SettingOutlined } from '@ant-design/icons';
 import styles from './header.module.css';
+import EmployeesHome from '../../pages/EmployeesHome/EmployeesHome';
+import { Link, Route } from 'react-router-dom';
+import LearnHub from '../../pages/LearnHub/LearnHub';
+import Career from '../../pages/Career/Career';
+import WorkCenter from '../../pages/WorkCenter/WorkCenter';
 const { SubMenu } = Menu;
 
 export default class Header extends Component {
@@ -23,17 +28,20 @@ export default class Header extends Component {
                     <Col flex={1} className={styles.logo}>
                         
                     </Col>
-                    <Col flex={3}>
+                    <Col flex={5}>
                         <Menu onClick={this.handleClick} selectedKeys={[current]} mode="horizontal">
-                            <Menu.Item key="team" className={styles.headerTitleFontSize}>
                             {/* icon={<MailOutlined />} */}
-                                Team
+                            <Menu.Item key="LearnHub" className={styles.headerTitleFontSize}>
+                                <Link to="/LearnHub">LearnHub</Link>
                             </Menu.Item>
-                            <Menu.Item key="class" className={styles.headerTitleFontSize}>
-                                Class
+                            <Menu.Item key="Career" className={styles.headerTitleFontSize}>
+                                <Link to="/Career">Career</Link>
                             </Menu.Item>
-                            <Menu.Item key="icareer" className={styles.headerTitleFontSize}>
-                                Icareer
+                            <Menu.Item key="Bridge" className={styles.headerTitleFontSize}>
+                                <Link to="/Bridge">Bridge</Link>
+                            </Menu.Item>
+                            <Menu.Item key="WorkCenter" className={styles.headerTitleFontSize} >
+                                <Link to="/WorkCenter">Work Center</Link>
                             </Menu.Item>
                             {/* <SubMenu key="SubMenu" icon={<SettingOutlined />} title="Navigation Three - Submenu">
                                 <Menu.ItemGroup title="Item 1">
@@ -48,6 +56,9 @@ export default class Header extends Component {
                         </Menu>
                     </Col>
                 </Row>
+                <Route path="/LearnHub" component={LearnHub}/>
+                <Route path="/Career" component={Career}/>
+                <Route path="/WorkCenter" component={WorkCenter}/>
             </div>
         );
     }

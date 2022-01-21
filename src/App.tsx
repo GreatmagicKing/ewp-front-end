@@ -7,11 +7,11 @@ import EmployeesHome from './pages/EmployeesHome/EmployeesHome';
 
 function App() {
   return (
-    <Fragment>
+    <div className = ''>
       <Header />
       {/* <Menus /> */}
-      <EmployeesHome />
-    </Fragment>
+      {/* <EmployeesHome /> */}
+    </div>
   );
 }
 
