@@ -1,14 +1,12 @@
 import React, { Component, Fragment } from 'react'
 import 'antd/dist/antd.css'
 import { Col, Menu, Row } from 'antd';
-import { MailOutlined, AppstoreOutlined, SettingOutlined } from '@ant-design/icons';
 import styles from './header.module.css';
-import EmployeesHome from '../../pages/EmployeesHome/EmployeesHome';
 import { Link, Redirect, Route } from 'react-router-dom';
 import LearnHub from '../../pages/LearnHub/LearnHub';
 import Career from '../../pages/Career/Career';
 import WorkCenter from '../../pages/WorkCenter/WorkCenter';
-const { SubMenu } = Menu;
+import Bridge from '../../pages/Bridge/Bridge';
 
 export default class Header extends Component {
     state = {
@@ -53,6 +51,7 @@ export default class Header extends Component {
                 <Route exact path="/" component={LearnHub}/>
                 <Route path="/LearnHub" component={LearnHub}/>
                 <Route path="/Career" component={Career}/>
+                <Route path="/Bridge" component={Bridge}/>
                 <Route path="/WorkCenter" component={WorkCenter}/>
             </div>
         );
